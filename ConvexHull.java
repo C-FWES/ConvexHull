@@ -14,7 +14,6 @@ public class ConvexHull {
         Point d = new Point(3.0, 6.0, "d");
         Point e = new Point(6.0, 5.0, "e");
         Point f = new Point(-4.0, 8.0, "f");
-//        List<Point> pointList = Arrays.asList(a, b, o, c, d);
         List<Point> pointList = new ArrayList<>();
         pointList.add(o);
         pointList.add(a);
@@ -23,20 +22,9 @@ public class ConvexHull {
         pointList.add(d);
         pointList.add(e);
         pointList.add(f);
-
-
         Point lowestPoint = getLowestPoint(pointList);
         pointList.remove(lowestPoint);
-//        System.out.println(lowestPoint);
-//        double cos = getCosine(o, d);
-//        System.out.println(cos);
-//        List<Point> pointList2 = Arrays.asList(a, c, d, b);
         List<Point> sorted = sortPointsByCCW(pointList, lowestPoint);
-//        for (Point point : sorted) {
-//            System.out.println(point);
-//        }
-//        boolean isCCW = isCCW(o, b, a);
-//        System.out.println(isCCW);
         MyStack<Point> pointMyStack = new MyStack<Point>();
         pointMyStack.push(lowestPoint);
         pointMyStack.push(sorted.get(0));
